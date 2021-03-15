@@ -1,17 +1,22 @@
+# Dockerfile
 
-FROM node:10.13-alpine
+# base image
+FROM node:15
 
 # create & set working directory
-RUN mkdir -p /usr/server
-WORKDIR /usr/server
+#RUN mkdir -p /usr/server
+WORKDIR /app
 
 # copy source files
-COPY . /usr/server
+#COPY . /usr/server
 
+# install dependencies
 RUN npm install
 
-COPY . .
+# COPY . .
+
+# start app desarrolllo
+# RUN npm run build
 
 EXPOSE 3030
-
 CMD node index.js
