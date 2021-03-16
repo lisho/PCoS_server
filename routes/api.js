@@ -1,10 +1,10 @@
 const router = require('express').Router();
 
 /** Importamos los archivos de cada ruta */
-const participantesApiRouter = require('./api/participantesApiRouter');
+const ciudadanosApiRouter = require('./api/ciudadanosApiRouter');
 
 /** Redirigimos las rutas */
 
-router.use('/participantes', participantesApiRouter);
+router.use('/ciudadanos', ciudadanosApiRouter);
 
 module.exports = router;

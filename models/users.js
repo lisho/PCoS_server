@@ -1,6 +1,6 @@
-
 module.exports = (sequelize, type) => {
-    return sequelize.define("participante", {
+    
+    return sequelize.define("user", {
         id: {
             type: type.INTEGER,
             primaryKey: true,
@@ -11,6 +11,8 @@ module.exports = (sequelize, type) => {
         dni: type.STRING,
         telefono: type.STRING,
         email: type.STRING,
+        perfil_profesional_id: type.INTEGER,
+        perfil_usuario_id: type.INTEGER
 
     })
 }

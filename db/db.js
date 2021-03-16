@@ -1,7 +1,10 @@
-const Sequelize = require('sequelize');
+const {Sequelize} = require('sequelize');
 
 /* Traemos los modelos (modelo = tabla) */
- const ParticipanteModel = require("../models/participantes")
+ const CiudadanoModel = require("../models/ciudadanos")
+ const UserModel = require("../models/users")
+ const PerfilesProfesional = require("../models/perfiles_profesional")
+ const PerfilesUsuario = require("../models/perfiles_usuario")
 
 /* Parametros de Sequalize: nombre de la bd, usuario, contraseña y un objeto con:
     - host, 
@@ -14,7 +17,10 @@ const sequelize = new Sequelize ("pcos", "lisho", "toor", {
 
 /* Creamos las tablas */
 
-const Participante = ParticipanteModel(sequelize, Sequelize);
+const Ciudadano = CiudadanoModel(sequelize, Sequelize);
+const User = UserModel(sequelize, Sequelize);
+const PerfilProfesional = PerfilesProfesional(sequelize, Sequelize);
+const PerfilUsuario = PerfilesUsuario(sequelize, Sequelize);
 
 /* Sincronizamos las tablas con la base de datos (y devuelve una promesa)*/
 
@@ -26,5 +32,5 @@ sequelize.sync({force: false})
  /* Exportamos los objetos que vamos a necesitar */   
 
  module.exports = {
-     Participante
+     Ciudadano, User, PerfilProfesional, PerfilUsuario
  }
