@@ -1,18 +1,13 @@
-User = require("./users")
-
 module.exports = (sequelize, type) => {
 
-    const PerfilProfesional = sequelize.define("perfil_profesional", {
+    return sequelize.define("estado_cita", {
         id: {
             type: type.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
-        perfil: type.STRING,
+        estado: type.STRING,
         descripcion: type.STRING,
-    
+       
     })
-
-    return PerfilProfesional
 }
-
